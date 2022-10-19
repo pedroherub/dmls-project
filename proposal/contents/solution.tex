@@ -1,0 +1,57 @@
+% !TeX encoding = UTF-8
+% !TeX root = ../main.tex
+
+%% ------------------------------------------------------------------------
+%% Copyright (C) 2021 SJTUG
+%% 
+%% SJTUBeamer Example Document by SJTUG
+%% 
+%% SJTUBeamer Example Document is licensed under a
+%% Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+%% 
+%% You should have received a copy of the license along with this
+%% work. If not, see <http://creativecommons.org/licenses/by-nc-sa/4.0/>.
+%% -----------------------------------------------------------------------
+
+\section{Planned solution}
+
+\subsection{Mechanism design: multifactor}
+
+\begin{frame}{Mechanism design: ML application?}
+  \begin{itemize}
+    \item Based on three parameters:
+          \begin{enumerate}
+            \item \alert{Workers' bidding}
+            \item \alert{Reputation}
+            \item \alert{Recent data quality estimation}
+          \end{enumerate}
+    \item Analytic Hierarchy Process (AHP) framework \rightarrow (top-down)
+    	\begin{enumerate}
+            \item \alert{Objective level}: winning workers
+            \item \alert{Criteria level}: parameters criteria
+            \item \alert{Alternative level}: workers available
+          \end{enumerate}
+    \end{itemize}
+    \begin{exampleblock}{Multifactor worker evaluation approach (example)}
+    	\begin{equation*}
+      	\theta_{i}=\omega_{1} B_{i}+\omega_{2} R_{i}+\omega_{3} Q_{i} \quad\quad \text { where } \omega_{i} \geq 0 \text { and } \sum_{\omega_{i}=1}^{3} \omega_{i}=1	
+    	\end{equation*}
+  \end{exampleblock}
+\end{frame}
+
+\subsection{Mechanism design: issues}
+
+\begin{frame}{Mechanism design: issues}
+  		\begin{enumerate}
+   			\item \textbf{How to select appropriate workers?}
+   				\begin{itemize}
+   					\item \textbf{Proposal: } decentralized architecture (blockchain technology) that lacks a single point of failure, and enhances privacy with asymmetric encryption and digital signature technology
+   				\end{itemize}
+    		\item \textbf{How to distribute the rewards to the workers?}
+  		\end{enumerate}
+  		With the help of \alert{mechanism design theory}\cite{article56} two important properties for the incentive mechanism are guaranteed:
+  		\begin{itemize}
+   					\item \textbf{Incentive quality (IC):} the truthful submission of sensing  cost is the worker's optimal bidding strategy
+   					\item \textbf{Individual rationality (IR):} the reward must compensate for the worker's cost (non-negative)
+   		\end{itemize}
+\end{frame}

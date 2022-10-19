@@ -1,0 +1,69 @@
+% !TeX encoding = UTF-8
+% !TeX root = ../main.tex
+
+%% ------------------------------------------------------------------------
+%% Copyright (C) 2021 SJTUG
+%% 
+%% SJTUBeamer Example Document by SJTUG
+%% 
+%% SJTUBeamer Example Document is licensed under a
+%% Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+%% 
+%% You should have received a copy of the license along with this
+%% work. If not, see <http://creativecommons.org/licenses/by-nc-sa/4.0/>.
+%% -----------------------------------------------------------------------
+
+\section{Research problems}
+
+\subsection{The incentive mechanism}
+
+\begin{frame}{Application to Federated Learning}
+  \begin{itemize}
+    \item Main types of incentive mechanisms:
+          \begin{enumerate}
+            \item \alert{Monetary-based}: distributing rewards. And two subtypes can be considered\cite{paper16}:
+            	\begin{itemize}
+            	\item \alert{price-decision-first} (auction theory) design optimal mechanism benefiting both requesters adn workers
+            	\item \alert{upload-decision-first}: distributing rewards base on the uploaded data (quality)
+          		\end{itemize}
+            \item \alert{Reputation-based}: reputation framework for worker selection (algorithms)
+          \end{enumerate}
+    \item \textbf{Limitations}
+    	\begin{enumerate}
+            \item Relies on a central platform, vulnerable to target attacks
+            \item Single-attribute incentive mechanisms (multifactor incentive needed)
+          \end{enumerate}
+     Some previous hybrid incentive mechanisms\cite{paper52} suffer of usability problems because the difficulty of hybrid data management
+  \end{itemize}
+\end{frame}
+
+\subsection{Benefits and limitations}
+
+\begin{frame}{Benefits}
+	A consortium blockchain-based incentive model for Federated Learning system is
+proposed
+  \begin{itemize}
+  \item \textbf{Benefits of consortium blockchain technology:} 
+  	\begin{itemize}
+  		\item resistant to the single point of failure (system security)
+  		\item cooperative management (by requesters) reduces cost and enhances the flexibility of the system (selection criteria)
+  	\end{itemize}
+  \item \textbf{Benefits of hybrid incentive mechanism:}
+  	\begin{itemize}
+  		\item encourages workers to contribute valuable data (and penalizes malicious ones)
+  		\item ensures favorables short-term and long-term incentives for workers
+  	\end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Limitations}
+	Further research:
+  \begin{enumerate}
+  \item Dynamic situation where evaluations attributes are changing
+  \item Optimization of consensus protocol (better performance)
+  \item Further protection of worker privacy
+  \end{enumerate}
+  \begin{block}{Possible solutions}
+  Application of ML techniques to blockchain-based system
+  \end{block}
+\end{frame}
