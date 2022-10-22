@@ -15,52 +15,70 @@
 
 \section{Related work}
 
-\subsection{Blockchain-based Federated Learning}
-
-\begin{frame}{Blockchain-based Federated Learning}
-     Some previous hybrid incentive mechanisms\cite{paper52} suffer of usability problems because the difficulty of hybrid data management
-\end{frame}
+\subsection{Federated Learning}
 
 \begin{frame}
-Advances and Open Problems in Federated Learning\cite{1912.04977}
+\begin{itemize}
 
+\item \textbf{Advances and Open Problems in Federated Learning\cite{kairouz_advances_2021}}
+This paper describes the defining characteristics and challenges of the federated learning setting.It highlights important practical constraints and considerations, and then enumerates a range of valuable research directions. The goals of this paper are to highlight research problems that are of significant theoretical and practical interest, and to encourage research on problems that could have significant real-world impact
+\end{itemize}
 
-This paper describes the defining characteristics and challenges of the federated learning setting.It highlights important practical constraints and considerations, and then enumerates a range of valuable
-research directions. The goals of this paper are to highlight research problems that are of significant theoretical and practical interest, and to encourage research on problems that could have significant real-world impact
-\end{frame}
-
-\begin{frame}
-Generative models for effective ML in  private, decentralized datasets\cite{1911.06679}
-
+\begin{itemize}
+\item \textbf{Generative models for effective ML in  private, decentralized datasets\cite{augenstein_generative_2020}}
 
 This document focuses on three main topics : 
-
-
--Identifying key challenges in implementing end-to-end workflows with non-inspectable data
-
-
--Proposing a methodology that allows ‘auxiliary’ generative models to resolve these challenges
-
-
--Demonstrating how privacy preserving federated generative models can be trained to high enough fidelity to discover introduced data errors matching
-those encountered in real world scenarios
+\begin{itemize}
+\item Identifying key challenges in implementing end-to-end workflows with non-inspectable data
+\item Proposing a methodology that allows ‘auxiliary’ generative models to resolve these challenges
+\item Demonstrating how privacy preserving federated generative models can be trained to high enough fidelity to discover introduced data errors matching those encountered in real world scenarios
+\end{itemize}
+\end{itemize}
 \end{frame}
 
-\begin{frame}
-Blockchain-based Federated Learning: A Comprehensive Survey\cite{Comprehensive_survey}
+\subsection{Blockchain-based Federated Learning}
 
+\begin{frame}
+\begin{itemize}
+\item \textbf{Blockchain-based Federated Learning: A Comprehensive Survey\cite{wang_blockchain-based_2021}}
 
 This paper conducts a comprehensive survey of the literature on blockchained FL (BCFL). First, it investigates how blockchain can be applied to federal learning from the perspective of system composition. Then, it analyzes the concrete functions of BCFL from the perspective of mechanism design and illustrate what problems blockchain addresses specifically for FL. Finally, it discusses some challenges and future research directions.
-\end{frame}
 
-\begin{frame}
-Federated Learning Meets Blockchain in Edge Computing: Opportunities and Challenges\cite{nguyen_federated_2021}
-
+\item \textbf{Federated Learning Meets Blockchain in Edge Computing: Opportunities and Challenges\cite{nguyen_federated_2021}}
 
 This article presents an overview of the fundamental concepts and explores the opportunities of FL chain in mobile-edge computing networks in relation with his main issues in FL chain design such as communication cost, resource allocation, incentive mechanism, security and privacy protection. The key solutions and the lessons learned along with the outlooks are also discussed. Then, it investigates the applications of FL chain in popular Mobile-edge computing domains.
-\end{frame}
-\subsection{Incentive mechanisms applied to Federated Learning}
+\end{itemize}
 
-\begin{frame}{Incentive mechanisms applied to Federated Learning}
-     Some previous hybrid incentive mechanisms\cite{paper52} suffer of usability problems because the difficulty of hybrid data management
+\end{frame}
+
+\subsection{Hybrid incentives for contributions}
+
+\begin{frame}
+\begin{itemize}
+\item \textbf{Record and Reward Federated Learning Contributions with Blockchain\cite{martinez_record_2019}}
+
+When contributing with local data to Federated Learning systems, this paper deals with the issues of data security and paying workers with appropriate rewards based on the data quality of contributions. A Blockchain design based on validation error based metric (in order to qualify gradient uploads for rewarding) is presented. Limitations are found regarding both inefficiency and inaccuracy in rewarding participant contributions and lack of scalability of data.
+
+\item \textbf{Transparent Contribution Evaluation for Secure Federated Learning on Blockchain\cite{ma_transparent_2021}}
+
+This article focus on privacy issues because of blockchain data being public to all contributors. Proposed solutions:
+\begin{itemize}
+\item Blockchain-based privacy-preserved FL with secure aggregation (mask updates) in order to protect data owner's privacy during training.
+\item A group-based Shapley value-based computation framework with secure aggregation (contribution evaluation protocol)
+\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+\subsection{Mechanism designs: theory}
+
+\begin{frame}
+\begin{itemize}
+\item \textbf{Blockchain-Enabled Federated Learning With Mechanism Design\cite{toyoda_blockchain-enabled_2020}}
+
+This work researchs theoretically about rewarding impacts contributor's behavior and defining appropriate qualitative rewards to the parcipants. In order to improve competition for model updating process, Mechanism Design theory is analyzed, specifically by leveraging contest and auction theory, in order to increase contributors' motivation and to maximize rewards. Some mathematical conditions regarding protocol design are found to be necessary for a successful application of contest theory in this scenario.
+Summing up, incentive-aware Federated Learning (crowsourcing) with Mechanism Design is a promising research theory and practical experimentation is needed.
+
+\end{itemize}
+
 \end{frame}

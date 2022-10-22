@@ -13,45 +13,65 @@
 %% work. If not, see <http://creativecommons.org/licenses/by-nc-sa/4.0/>.
 %% -----------------------------------------------------------------------
 
-\section{Planned solution}
+\section{Planned solutions}
 
-\subsection{Mechanism design: multifactor}
+\subsection{ML for system}
 
-\begin{frame}{Mechanism design: ML application?}
+\begin{frame}{Mechanism design: multifactor issue (static)}
+\begin{multicols}{2}
   \begin{itemize}
-    \item Based on three parameters:
+    \item Based on \textbf{static} parameters:
           \begin{enumerate}
             \item \alert{Workers' bidding}
             \item \alert{Reputation}
             \item \alert{Recent data quality estimation}
           \end{enumerate}
-    \item Analytic Hierarchy Process (AHP) framework \rightarrow (top-down)
+    \item Analytic Hierarchy Process (AHP)
     	\begin{enumerate}
             \item \alert{Objective level}: winning workers
             \item \alert{Criteria level}: parameters criteria
             \item \alert{Alternative level}: workers available
           \end{enumerate}
     \end{itemize}
+\end{multicols}
     \begin{exampleblock}{Multifactor worker evaluation approach (example)}
     	\begin{equation*}
       	\theta_{i}=\omega_{1} B_{i}+\omega_{2} R_{i}+\omega_{3} Q_{i} \quad\quad \text { where } \omega_{i} \geq 0 \text { and } \sum_{\omega_{i}=1}^{3} \omega_{i}=1	
     	\end{equation*}
   \end{exampleblock}
+  \begin{block}{Approach: ML for system}
+  	Dynamic evaluation parameters for the incentive model (ML techniques)
+  \end{block}
 \end{frame}
 
-\subsection{Mechanism design: issues}
+%\begin{frame}{Mechanism design: issues}
+%  		\begin{enumerate}
+%   			\item \textbf{How to select appropriate workers?}
+%   				\begin{itemize}
+%   					\item \textbf{Proposal: } decentralized architecture (blockchain technology) that lacks a single point of failure, and enhances privacy with asymmetric encryption and digital signature technology
+%   				\end{itemize}
+%    		\item \textbf{How to distribute the rewards to the workers?}
+%  		\end{enumerate}
+%  		With the help of \alert{mechanism design theory}\cite{article56} two important properties for the incentive mechanism are guaranteed:
+%  		\begin{itemize}
+%   					\item \textbf{Incentive quality (IC):} the truthful submission of sensing  cost is the worker's optimal bidding strategy
+%   					\item \textbf{Individual rationality (IR):} the reward must compensate for the worker's cost (non-negative)
+%   		\end{itemize}
+%\end{frame}
 
-\begin{frame}{Mechanism design: issues}
-  		\begin{enumerate}
-   			\item \textbf{How to select appropriate workers?}
-   				\begin{itemize}
-   					\item \textbf{Proposal: } decentralized architecture (blockchain technology) that lacks a single point of failure, and enhances privacy with asymmetric encryption and digital signature technology
-   				\end{itemize}
-    		\item \textbf{How to distribute the rewards to the workers?}
-  		\end{enumerate}
-  		With the help of \alert{mechanism design theory}\cite{article56} two important properties for the incentive mechanism are guaranteed:
-  		\begin{itemize}
-   					\item \textbf{Incentive quality (IC):} the truthful submission of sensing  cost is the worker's optimal bidding strategy
-   					\item \textbf{Individual rationality (IR):} the reward must compensate for the worker's cost (non-negative)
-   		\end{itemize}
+\subsection{Bonus: System for ML}
+
+\begin{frame}{System efficiency: consensus protocol}
+\alert{Blockchain-based Federated Learning (FL)}
+  \begin{itemize}
+    \item Potential bottlenecks:
+    	\begin{enumerate}
+            \item Transaction throughput
+            \item Lack of scalability of data
+          \end{enumerate}
+    \end{itemize}
+
+  \begin{block}{Approach: System for ML}
+  	Optimization of consensus protocol in FL (better performance)
+  \end{block}
 \end{frame}
