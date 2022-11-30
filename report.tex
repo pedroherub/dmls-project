@@ -96,15 +96,27 @@ Gross violations will trigger corrections at the camera-ready phase.
 
 \section{Motivation}
 
-\section{Research problem}
+\section{Blockchain-based Federated Learning}
 
-\section{Related work}
+Although Federated Learning allows for participants to contribute their local data without it being revealed, it faces issues in data security and in accurately paying participants for quality data contributions. \cite{martinez_record_2019} propose an EOS Blockchain design and workflow to establish data security, a novel validation error based metric upon which \cite{martinez_record_2019} qualify gradient uploads for payment, and implement a small example of the blockchain Federated Learning model to analyze its performance. \cite{awan_poster_2019} propose a blockchain-based privacy-preserving federated learning (BC-based PPFL) framework, which leverages the immutability and decentralized trust properties of blockchain to provide provenance of model updates. \cite{korkmaz_chainfl_2020} propose a decentralized federated learning approach named Chain FL that makes use of the blockchain to delegate the responsibility of storing the model to the nodes on the network instead of a centralized server. \cite{sharma_2020} propose a distributed computing defence framework for sustainable society using the features of blockchain technology and federated learning. In the work \cite{li_crowdsfl_2020} propose a crowdsourcing framework named CrowdSFL, that users can implement crowdsourcing with less overhead and higher security. This paper \cite{chen_2020} propose a distributed computing architecture, the federated Learning based on the consortium blockchain. \cite{kumar_2021} propose a framework that collects a small amount of data from different sources (various hospitals) and trains a global deep learning model using blockchain based federated learning. Additionally \cite{kumar_2021} collect real-life COVID-19 patients data, which is, open to the research community. The security of local parameters, the learning quality, and the varying computing and communication resources, are crucial issues that remain unexplored in federated learning schemes. \cite{guo_2020} propose a data sharing mechanism that combines blockchain and federated learning over smart city. The security of local parameters, the learning quality, and the varying computing and communication resources, are crucial issues that remain unexplored in federated learning schemes. \cite{lu_2021} present its potential application scenarios in beyond 5G. \cite{ma_2021} propose a blockchain-based federated learning framework and a protocol to transparently evaluate each participant's contribution. The framework protects all parties' privacy in the model building phase and transparently evaluates contributions based on the model updates. Collaborative model development and privacy protection are critical considerations while training a global deep learning model. To address these challenges \cite{durga_fled_2022} propose a novel framework based on blockchain and the federated learning model. Other influential work includes \cite{lu_2020}, \cite{lee_2021}.
 
-in previous work \cite{nguyen_federated_2021}
+\section{Research lines}
 
-\section{Planned solution}
+\subsection{Security issues: privacy}
 
-\section{Task assignment and goal}
+There are many security problems neglected in federated learning, for example, the participants may behave incorrectly in gradient collecting or parameter updating, and the server may be malicious as well. \cite{weng_2019} present a distributed, secure, and fair deep learning framework named \textit{DeepChain} to solve these problems. \cite{nguyen_2020} provide a state-of-art survey on the integration of blockchain with 5G networks and beyond. \cite{kumar_2020} introduce a secure and decentralized training for distributed data. \cite{zhang_2020} propose a new architecture based on federated learning to relieve transmission load and address privacy concerns of providers. \cite{otoum_2020} introduce a solution that integrates both federated learning and blockchain to ensure both data privacy and network security. The security of federated learning is increasingly being questioned, due to the malicious clients or central servers' constant attack to the global model or user privacy data. To address these security issues \cite{li_2021} propose a decentralized federated learning framework based on blockchain, i.e., a Blockchain-based Federated Learning framework with Committee consensus (BFLC). \cite{liu_2020} propose a blockchain-based secure FL framework to create smart contracts and prevent malicious or unreliable participants from involving in FL. \cite{9170905} introduce the digital twin wireless networks (DTWN) by incorporating digital twins into wireless networks, to migrate real-time data processing and computation to the edge plane. In further \cite{xu_bafl_2021} propose the concept of device's score and use entropy weight method to measure the quality of model update. Other influential work includes \cite{lu_2020}.
+
+\subsection{Quality management: incentive}
+
+There are many security problems neglected in federated learning, for example, the participants may behave incorrectly in gradient collecting or parameter updating, and the server may be malicious as well. \cite{weng_2019} present a distributed, secure, and fair deep learning framework named \textit{DeepChain} to solve these problems. This technique provides a promising privacy preservation for mobile devices while simultaneously ensuring high learning performance \cite{kang_2019}. \cite{liu_fedcoin_2020} propose FedCoin, a blockchain-based peer-to-peer payment system for FL to enable a feasible SV based profit distribution. \cite{lin_2022} propose a novel Wirelessly Powered Edge intelliGence (WPEG) framework, which aims to achieve a stable, robust, and sustainable edge intelligence by energy harvesting (EH) methods. \cite{wang_2020} propose SFAC, a secure federated learning framework for UAV-assisted MCS. A new ecosystem of ML model trading over a trusted Blockchain-based network is proposed \cite{nguyen_2021}. Problems, however, can arise if there is a lack of quality data for AI-model training, scalability, and maintenance. \cite{chaabene_2022} propose a data-centric federated learning architecture leveraged by a public blockchain and smart contracts to overcome this significant issue. The proposed approach employs privacy-preserving bidirectional long-short term memory (BiLSTM) and augments the security through the integration of Blockchain technology based on Ethereum smart contract environment \cite{rahmadika_2022}. While several works focus on strategic incentive designs and client selection to overcome this problem, there is a major knowledge gap in terms of an overall design tailored to the foreseen digital economy, including Web 3.0, while simultaneously meeting the learning objectives. To address this gap \cite{pandey_2022} propose a contribution-based tokenized incentive scheme, namely \texttt{FedToken}, backed by blockchain technology that ensures fair allocation of tokens amongst the clients that corresponds to the valuation of their data during model training. Other influential work includes \cite{lu_2020}.
+
+%\section{Research problem}
+
+%\section{Related work}
+
+%\section{Planned solution}
+
+%\section{Task assignment and goal}
 
 
 %\section{Electronic Submission}
@@ -541,7 +553,7 @@ support.
 % references without citing it in the main text, use \nocite
 \nocite{langley00}
 
-\bibliography{proposal}
+\bibliography{biblatex}
 \bibliographystyle{mlsys2023}
 
 
