@@ -1,0 +1,267 @@
+% \iffalse meta-comment ---------------------------------------------
+% Copyright (C) Shanghai Jiao Tong University
+% The definition in this file is referred to the Visual Identity System
+% from Shanghai Jiao Tong University (SJTU). 
+% See https://vi.sjtu.edu.cn for more information.
+% 
+% SJTUG implements the design but doesn't hold the copyright.
+% Any commercial usage in this file should be acknowledged by
+% the administration of SJTU.
+% More information about the license,
+% see https://vi.sjtu.edu.cn/index.php/articles/bulletin/16. 
+% ------------------------------------------------------------------- \fi
+% \iffalse
+%<*package>
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{sjtuvi}[2021/10/29 Visual Identity System library for sjtubeamer v2.3.0]
+%</package>
+% \fi
+% \CheckSum{0}
+% \StopEventually{}
+% \iffalse
+%<*package>
+% ------------------------------------------------------------------- \fi
+%
+% \subsection{SJTU VI Library}
+%   This library provides the definition of basic elements in SJTU VI, including color, logo and some shapes. 
+%
+%  \begin{macro}{\DefineOption}
+%   Define the beamer option on the corresponding package, key and value.
+%    \begin{macrocode}
+\def\DefineOption#1#2#3{
+  % #1: package
+  % #2: key
+  % #3: value
+  \DeclareOptionBeamer{#3}{\expandafter\def\csname sjtubeamer@#1@#2\endcsname{#3}}
+}
+%    \end{macrocode}
+%  \end{macro}
+%
+%  \begin{macro}{\EqualOption}
+%   To check if the option on package, key is equal to value.
+%
+%   Here, a dummy trick is used to pass the if condition.
+%   Since LaTeX handles \verb"\if" differently.
+%   \verb"\iftrue" will eliminate the nearest \verb"\else" and \verb"\fi" but remains other extra \verb"\fi" and throws errors.
+%   To avoid this, if the macro is expanded after \verb"\if", \verb"T=T", the condition holds and finish the current pair. And continues to process the real defined macro. This solution is somehow to combat against the \LaTeX compiler. In modern \LaTeX 3, it is not so nasty to deal with neseted conditions. 
+%   \verb"\iffalse" doesn't need to be considered.
+%    \begin{macrocode}
+\def\EqualOption{TT\fi\ifEqualOption} % dummy trick to pass the condition test
+\def\ifEqualOption#1#2#3{
+  % #1: package
+  % #2: key
+  % #3: value
+  \newif\iftempif
+  \edef\tempvar{\csname sjtubeamer@#1@#2\endcsname}
+  \def\tempvalue{#3}
+  \ifx\tempvar\tempvalue\tempiftrue\else\tempiffalse\fi
+  \iftempif
+}
+%    \end{macrocode}
+%  \end{macro}
+%
+% \subsubsection{Load TikZ}
+%   Load TikZ package and its related library: 
+%   \verb"pattern.meta" provides the interface to define a pattern; 
+%   \verb"fadings" provides the method to create a fading mask; 
+%   \verb"decoration.pathmorphing" provides the interface to user-define a decoration.
+%   \verb"external" provides the way for tikz externalization, which will reduce the number of repetitive rendering with the cached pdf.
+%    \begin{macrocode}
+\RequirePackage{tikz}
+%<*compatible>
+\usetikzlibrary{patterns.meta}
+%</compatible>
+\usetikzlibrary{fadings}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{external}
+%    \end{macrocode}
+%
+% \subsubsection{Color Definition}
+%   The following color is defined by SJTU VI.
+%   \begin{description}
+%       \item[primary] The primary color, which influences the color of title and the background of title page.
+%       \item[secondary] The secondary color, which influences the color of subtitle.
+%       \item[tertiary] The tertiary color, which provides the color for the blocks.
+%   \end{description}
+%    \begin{macrocode}
+\definecolor{sjtuRedPrimary}{RGB}{167,32,56}         %engred
+\definecolor{sjtuRedSecondary}{RGB}{240,131,0}       %orange
+\definecolor{sjtuRedTertiary}{RGB}{253,208,0}        %yellow
+\definecolor{sjtuBluePrimary}{RGB}{0,64,152}         %problue 
+\definecolor{sjtuBlueSecondary}{RGB}{51,141,39}      %lightgreen
+\definecolor{sjtuBlueTertiary}{RGB}{0,81,78}         %lightgray
+%    \end{macrocode}
+%
+% \subsubsection{Declare Logo}
+% \begin{macro}{\definelogo}
+%    Define a mask picture to make its different color variants.
+%    The first argument assigns the file name and the second sets the horizontal cropping and the third sets the vertical cropping. Notice that the cropping is symmetrical (double the length). When the horizontal cropping is greater than the vertical cropping, the mask will be placed by its height, otherwise by its width. The domain for both cropping parameters is 0 to 1.
+%    You should define a logo \verb"\definelogo{mylogo}{<hc>}{<vc>}" then use it in the contents like:
+%    \verb"\mylogo[white]", where the optional parameter could be the override color beyond the control of main logo color system or \verb"opacity=..." to identify the opacity you want or any other parameter for a TikZ node.
+%   Remember, the picture should be in the vi/ folder.
+%   The externalization will be disabled when using this system to generate logos, locally.
+%    \begin{macrocode}
+\newcommand{\definelogo}[3]{
+  % #1: file from vi/ folder
+  % #2: horizontal clip (0~1)
+  % #3: vertical clip (0~1)
+  \pgfmathparse{notgreater(#2,#3)}
+  \ifnum\pgfmathresult=1
+    \begin{tikzfadingfrompicture}[name=#1]
+      \fill[black] (-1,-1) rectangle (1,1);
+      \node {\includegraphics[width=1.5cm]{vi/#1}};
+    \end{tikzfadingfrompicture}
+  \else 
+    \begin{tikzfadingfrompicture}[name=#1]
+      \fill[black] (-1,-1) rectangle (1,1);
+      \node {\includegraphics[height=1.5cm]{vi/#1}};
+    \end{tikzfadingfrompicture}
+  \fi
+  \expandafter\providecommand\csname #1\endcsname[1][\sjtubeamer@logocolor]{
+    % ##1: override color, or opacity=... (optional)
+    \tikzexternaldisable
+    \begin{tikzpicture}
+      \begin{scope}
+        \clip ({-1.0+#2},{-1.0+#3}) rectangle ({1.0-#2},{1.0-#3});
+        \fill [\sjtubeamer@logocolor, ##1, path fading=#1]
+          (-1,-1) rectangle (1,1);
+      \end{scope}
+    \end{tikzpicture}
+  }
+}
+%    \end{macrocode}
+% \end{macro}
+%
+%   WARNING: This library will define the initial color to sjtuRedPrimary, remember to change the variable after using this package!
+%    \begin{macrocode}
+\def\sjtubeamer@logocolor{sjtuRedPrimary}
+%    \end{macrocode}
+%    Define the required logo.
+%    \begin{macrocode}
+\definelogo{sjtubadge}{0}{0}
+\definelogo{cnlogo}{0.13}{0.75}
+\definelogo{enlogo}{0.13}{0.75}
+\definelogo{dlogo}{0}{0}
+\definelogo{vlogo}{0.8}{0.13}
+\definelogo{sjtubg}{0.3}{0.5}
+%    \end{macrocode}
+%
+%
+% \subsubsection{Shape Declarations}
+% \begin{macro}{stamp}
+%	  Declare stamp pattern to make a stamp array.
+%
+%	  The newest version of TikZ provides the interface to user-define a pattern. Obeying compatibility philosophy, use \verb"\pgfkeyvalueof" interface to get parameters in a standard way. The unit is first tested in a standalone file and previewed by TikZEdt.
+%    \begin{macrocode}
+%<*compatible>
+\tikzdeclarepattern{
+  name=stamp,
+  parameters={
+      \pgfkeysvalueof{/pgf/pattern keys/size},
+      \pgfkeysvalueof{/pgf/pattern keys/xshift},
+      \pgfkeysvalueof{/pgf/pattern keys/yshift},
+    },
+  defaults={
+      size/.initial = 5pt,
+      xshift/.initial = 0pt,
+      yshift/.initial = 0pt,
+    },
+  bottom left={(
+      -0.5*\pgfkeysvalueof{/pgf/pattern keys/size}
+      +\pgfkeysvalueof{/pgf/pattern keys/xshift},
+      -0.4*\pgfkeysvalueof{/pgf/pattern keys/size}
+      +\pgfkeysvalueof{/pgf/pattern keys/yshift}
+      )},
+  top right={(
+      0.5*\pgfkeysvalueof{/pgf/pattern keys/size}
+      +\pgfkeysvalueof{/pgf/pattern keys/xshift},
+      0.4*\pgfkeysvalueof{/pgf/pattern keys/size}
+      +\pgfkeysvalueof{/pgf/pattern keys/yshift}
+      )},
+  tile size={(
+      \pgfkeysvalueof{/pgf/pattern keys/size},
+      0.8*\pgfkeysvalueof{/pgf/pattern keys/size}
+      )},
+  code={
+      \def\s{\pgfkeysvalueof{/pgf/pattern keys/size}}%
+      \tikzset{x=0.5*\s,y=0.2*\s}
+      \fill[xshift=\pgfkeysvalueof{/pgf/pattern keys/xshift},
+        yshift=\pgfkeysvalueof{/pgf/pattern keys/yshift}]
+      (-0.25*\s,0)
+      -- (-0.17*\s,0.06*\s)
+      -- (-0.17*\s,0.1*\s)
+      -- (0.17*\s,0.1*\s)
+      -- (0.17*\s,0.06*\s)
+      -- (0.25*\s,0)
+      -- (0.17*\s,-0.06*\s)
+      -- (0.17*\s,-0.1*\s)
+      -- (-0.17*\s,-0.1*\s)
+      -- (-0.17*\s,-0.06*\s) -- cycle;
+    }
+}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\stamparray}
+%	  Create the stamp array in the TikZ environment.
+%
+%	  Notice \TeX{} is not good at handling parameters. Always remember to store it into a temporary variable. Register \verb"\pgfmathresult" will store the result of \verb"\pgfmathparse".
+%    \begin{macrocode}
+\providecommand{\stamparray}[3]{
+  % #1: pattern size
+  % #2: starting point
+  % #3: ending point
+  \usebeamercolor{palette primary}
+  \fill [pattern={stamp[size=#1]},
+    pattern color=bg!50!fg] #2 rectangle #3;
+  \def\s{#1}%
+  \pgfmathparse{0.5*\s}\let\xs=\pgfmathresult%
+  \pgfmathparse{-0.4*\s}\let\ys=\pgfmathresult%
+  \fill [pattern={stamp[size=#1,xshift=\xs, yshift=\ys]},
+    pattern color=bg!50!fg] #2 rectangle #3;
+}
+%</compatible>
+%    \end{macrocode}
+%   For \TeX Live 2018 and even older, it is \emph{not} compatible to use the patterns.meta library for making user-defined patterns. The function will do nothing.
+%    \begin{macrocode}
+%<*!compatible>
+\providecommand{\stamparray}[3]{}
+%</!compatible>
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{stampline}
+%	  Declare a decoration to make a loop stampline.
+%
+%	  Notice that \verb"auto corner on length" is open to avoid spikes where the state hasn't meet \verb"final" yet.
+%    \begin{macrocode}
+\pgfdeclaredecoration{stampline}{initial}
+{
+  \state{initial}[
+    width=\pgfdecorationsegmentlength,
+    auto corner on length=\pgfdecorationsegmentlength]
+  {
+    \def\l{\pgfdecorationsegmentlength}%
+    \pgfpathlineto{\pgfpoint{0.25*\l}{0pt}}
+    \pgfpathlineto{\pgfpoint{0.33*\l}{0.06*\l}}
+    \pgfpathlineto{\pgfpoint{0.33*\l}{0.1*\l}}
+    \pgfpathlineto{\pgfpoint{0.67*\l}{0.1*\l}}
+    \pgfpathlineto{\pgfpoint{0.67*\l}{0.06*\l}}
+    \pgfpathlineto{\pgfpoint{0.75*\l}{0pt}}
+    \pgfpathlineto{\pgfpoint{\l}{0pt}}
+  }
+  \state{final}
+  {
+    \pgfpathlineto{\pgfpointdecoratedpathlast}
+  }
+}
+%    \end{macrocode}
+% \end{macro}
+%
+%
+% \iffalse
+%</package>
+% \fi
+%
+% \Finale
+\endinput
