@@ -45,19 +45,176 @@
 \end{frame}
 
 \begin{frame}{Crowdsensing: issues}
+\begin{multicols}{2}
   		\begin{enumerate}
    			\item Managed and maintained \alert{centralized platforms} suffer from the single point of failure
-   				\begin{itemize}
-   					\item \textbf{Proposal: } decentralized architecture (blockchain technology) that lacks a single point of failure, and enhances privacy with asymmetric encryption and digital signature technology
-   				\end{itemize}
-    		\item Encouraging workers by offering appropiate \alert{incentive mechanisms} (monetary usually) \rightarrow  \underline{auction theory} guarantees benefits for both requesters and workers\cite{paper15} but only provide short-term incentives
-    			\begin{itemize}
-   					\item \textbf{Proposal:} hybrid incentive mechanism, adopting \underline{mechanism design theory}, considering three factors:
-   					\begin{itemize}
-   					\item Monetary reward
-   					\item Reputation evaluation
-   					\item Data quality
-   					\end{itemize}
-   				\end{itemize}
+   				% \begin{itemize}
+   				% 	\item \textbf{Proposal: } decentralized architecture (blockchain technology) that lacks a single point of failure, and enhances privacy with asymmetric encryption and digital signature technology
+   				% \end{itemize}
   		\end{enumerate}
+  		\begin{figure}[h]
+                \centering
+                \includegraphics[width=5cm]{topologyFL.PNG}
+                \caption{Topology of traditional FL}
+            \end{figure}
+  \end{multicols}
 \end{frame}
+
+\begin{frame}{Crowdsensing: issues}
+\begin{multicols}{2}
+  		\begin{enumerate}
+    		\item Encouraging workers by offering appropiate \alert{incentive mechanisms} (monetary usually) \rightarrow  \underline{auction theory} guarantees benefits for both requesters and workers\cite{paper15} but only provide short-term incentives
+    			% \begin{itemize}
+   				% 	\item \textbf{Proposal:} hybrid incentive mechanism, adopting \underline{mechanism design theory}, considering three factors:
+   				% 	\begin{itemize}
+   				% 	\item Monetary reward
+   				% 	\item Reputation evaluation
+   				% 	\item Data quality
+   				% 	\end{itemize}
+   				% \end{itemize}
+                   \begin{figure}[H]
+                    \centering
+%                    \begin{subfigure}
+                      \centering
+                      \includegraphics[width=1cm]{money.PNG}
+                      \caption{Monetary reward}
+%                    \end{subfigure}%
+%                    \begin{subfigure}
+                      \centering
+                      \includegraphics[width=1cm]{reputation.PNG}
+                      \caption{Worker reputation}
+%                    \end{subfigure}%
+%                    \begin{subfigure}
+                        \centering
+                        \includegraphics[width=1cm]{dataQuality.PNG}
+                        \caption{Data quality}
+%                      \end{subfigure}
+%                    \caption{Incentive mechanisms}
+%                    \label{fig:incentive mechanisms}
+                    \end{figure}
+  		\end{enumerate}
+  \end{multicols}
+\end{frame}
+
+%\section{Background}
+%
+%\subsection{Motivation}
+%
+%\begin{frame}{Motivation}
+%	\begin{block}{Goal}
+%        Applying ML to systems (blockchain-based models)
+%      \end{block}
+%  \begin{itemize}
+%    \item Research line mainly targeted to \alert{blockchain technology} (its application to systems)
+%    \item Research group in Department of Automation (PhD supervisors) has been recently working in blockchain-based models applied to \alert{trust management systems}
+%	\item Specifically, applied to data-aggregation systems in the Internet of Things (IoT) field \alert{crowdsensing}
+%	\item Could similar approach be applied for \alert{Federated Learning}?
+%%    \item My PhD thesis could use some of the model simulation techniques (stochastic processes) used in this research paper experimentation
+%%    \item And of course, it is related to a emerging subfield that could greatly contribute to the development of the Internet of Things (IoT)
+%  \end{itemize}
+%\end{frame}
+%
+%\subsection{Crowdsensing}
+%
+%\begin{frame}{Crowdsensing: definition}
+%  \begin{itemize}
+%  \item \textbf{Crowdsensing:} emerging paradigm of data aggregation\cite{paper1}, having a key role in data-driven applications. Specially used for getting large ammounts of IoT sensing data, by using the individual intelligent sensing devices.
+%  \item \textbf{Benefit:} improved data collection efficiency and reduced costs effectively\cite{paper2}
+%  \end{itemize}
+%  \begin{figure}[h]
+%        \centering
+%        \includegraphics[width=.8\textwidth]{201909-wei-figure1.jpg}
+%      \end{figure}
+%\end{frame}
+%
+%\begin{frame}{Crowdsensing: issues}
+%  		\begin{enumerate}
+%   			\item Managed and maintained \alert{centralized platforms} suffer from the single point of failure
+%   			\begin{figure}[h]
+%                \centering
+%                \includegraphics[width=8cm]{topologyFL.PNG}
+%                \caption{Topology of traditional FL}
+%            \end{figure}
+%   				% \begin{itemize}
+%   				% 	\item \textbf{Proposal: } decentralized architecture (blockchain technology) that lacks a single point of failure, and enhances privacy with asymmetric encryption and digital signature technology
+%   				% \end{itemize}
+%    		\item Encouraging workers by offering appropiate \alert{incentive mechanisms} (monetary usually) \rightarrow  \underline{auction theory} guarantees benefits for both requesters and workers\cite{paper15} but only provide short-term incentives
+%    			% \begin{itemize}
+%   				% 	\item \textbf{Proposal:} hybrid incentive mechanism, adopting \underline{mechanism design theory}, considering three factors:
+%   				% 	\begin{itemize}
+%   				% 	\item Monetary reward
+%   				% 	\item Reputation evaluation
+%   				% 	\item Data quality
+%   				% 	\end{itemize}
+%   				% \end{itemize}
+%                   \begin{figure}[H]
+%                    \centering
+%                    \begin{subfigure}
+%                      \centering
+%                      \includegraphics[width=2cm]{money.PNG}
+%                      \caption{Monetary reward}
+%                    \end{subfigure}%
+%                    \begin{subfigure}
+%                      \centering
+%                      \includegraphics[width=2cm]{reputation.PNG}
+%                      \caption{Worker reputation}
+%                    \end{subfigure}%
+%                    \begin{subfigure}
+%                        \centering
+%                        \includegraphics[width=2cm]{dataQuality.PNG}
+%                        \caption{Data quality}
+%                      \end{subfigure}
+%                    \caption{Incentive mechanisms}
+%                    \label{fig:incentive mechanisms}
+%                    \end{figure}
+%  		\end{enumerate}
+%\end{frame}
+%
+%%\section{Background}
+%%
+%%\subsection{Motivation}
+%%
+%%\begin{frame}{Motivation}
+%%	\begin{block}{Goal}
+%%        Applying ML to systems (blockchain-based models)
+%%      \end{block}
+%%  \begin{itemize}
+%%    \item Research line mainly targeted to \alert{blockchain technology} (its application to systems)
+%%    \item Research group in Department of Automation (PhD supervisors) has been recently working in blockchain-based models applied to \alert{trust management systems}
+%%	\item Specifically, applied to data-aggregation systems in the Internet of Things (IoT) field \alert{crowdsensing}
+%%	\item Could similar approach be applied for \alert{Federated Learning}?
+%%%    \item My PhD thesis could use some of the model simulation techniques (stochastic processes) used in this research paper experimentation
+%%%    \item And of course, it is related to a emerging subfield that could greatly contribute to the development of the Internet of Things (IoT)
+%%  \end{itemize}
+%%\end{frame}
+%%
+%%\subsection{Crowdsensing}
+%%
+%%\begin{frame}{Crowdsensing: definition}
+%%  \begin{itemize}
+%%  \item \textbf{Crowdsensing:} emerging paradigm of data aggregation\cite{paper1}, having a key role in data-driven applications. Specially used for getting large ammounts of IoT sensing data, by using the individual intelligent sensing devices.
+%%  \item \textbf{Benefit:} improved data collection efficiency and reduced costs effectively\cite{paper2}
+%%  \end{itemize}
+%%  \begin{figure}[h]
+%%        \centering
+%%        \includegraphics[width=.8\textwidth]{201909-wei-figure1.jpg}
+%%      \end{figure}
+%%\end{frame}
+%%
+%%\begin{frame}{Crowdsensing: issues}
+%%  		\begin{enumerate}
+%%   			\item Managed and maintained \alert{centralized platforms} suffer from the single point of failure
+%%   				\begin{itemize}
+%%   					\item \textbf{Proposal: } decentralized architecture (blockchain technology) that lacks a single point of failure, and enhances privacy with asymmetric encryption and digital signature technology
+%%   				\end{itemize}
+%%    		\item Encouraging workers by offering appropiate \alert{incentive mechanisms} (monetary usually) \rightarrow  \underline{auction theory} guarantees benefits for both requesters and workers\cite{paper15} but only provide short-term incentives
+%%    			\begin{itemize}
+%%   					\item \textbf{Proposal:} hybrid incentive mechanism, adopting \underline{mechanism design theory}, considering three factors:
+%%   					\begin{itemize}
+%%   					\item Monetary reward
+%%   					\item Reputation evaluation
+%%   					\item Data quality
+%%   					\end{itemize}
+%%   				\end{itemize}
+%%  		\end{enumerate}
+%%\end{frame}
