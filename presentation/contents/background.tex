@@ -18,25 +18,44 @@
 \subsection{Motivation}
 
 \begin{frame}{Motivation}
-	\begin{block}{Goal}
-        Applying ML to systems (blockchain-based models)
-      \end{block}
+%	\begin{block}{Goal}
+%        Applying ML to systems (blockchain-based models)
+%      \end{block}
   \begin{itemize}
-    \item Research line mainly targeted to \alert{blockchain technology} (its application to systems)
-    \item Research group in Department of Automation (PhD supervisors) has been recently working in blockchain-based models applied to \alert{trust management systems}
-	\item Specifically, applied to data-aggregation systems in the Internet of Things (IoT) field \alert{crowdsensing}
+    \item Research interest mainly targeted to \alert{blockchain technology} (its application to distributed Machine Learning systems)
+%    \item Research group in Department of Automation (PhD supervisors) has been recently working in blockchain-based models applied to \alert{trust management systems}
+	\item Specifically, applied to data-aggregation systems (e.g. \alert{crowdsensing} in the Internet of Things (IoT) field)
 	\item Could similar approach be applied for \alert{Federated Learning}?
 %    \item My PhD thesis could use some of the model simulation techniques (stochastic processes) used in this research paper experimentation
 %    \item And of course, it is related to a emerging subfield that could greatly contribute to the development of the Internet of Things (IoT)
   \end{itemize}
 \end{frame}
 
+\begin{frame}{Blockchain technology}
+\begin{multicols}{2}
+  \alert{Distributed ledger containing a time-stamped series of immutable blockchains, trustless, decentralized, proof-tampering and full traceability}
+%   \begin{itemize}
+%     \item Research approaches on blockchain-based crowdsensing:
+%           \begin{itemize}
+%             \item Evaluating time consumption and task cost of applying a blockchain-based system\cite{paper33}
+%             \item Blockchain-based crowdsensing quality control model\cite{paper34}
+%             \item Considering privacy issues\cite{paper35}
+%             \item Handling location privacy protection\cite{paper37} (confusion mechanism)
+%           \end{itemize}
+%   \end{itemize}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=5cm]{topologyBC.PNG}
+    \end{figure}
+\end{multicols}
+\end{frame}
+
 \subsection{Crowdsensing}
 
 \begin{frame}{Crowdsensing: definition}
   \begin{itemize}
-  \item \textbf{Crowdsensing:} emerging paradigm of data aggregation\cite{paper1}, having a key role in data-driven applications. Specially used for getting large ammounts of IoT sensing data, by using the individual intelligent sensing devices.
-  \item \textbf{Benefit:} improved data collection efficiency and reduced costs effectively\cite{paper2}
+  \item \textbf{Crowdsensing:} emerging paradigm of data aggregation, having a key role in data-driven applications. Specially used for getting large ammounts of IoT sensing data, by using the individual intelligent sensing devices.
+  \item \textbf{Benefit:} improved data collection efficiency and reduced costs effectively
   \end{itemize}
   \begin{figure}[h]
         \centering
@@ -44,7 +63,7 @@
       \end{figure}
 \end{frame}
 
-\begin{frame}{Crowdsensing: issues}
+\begin{frame}{Crowdsensing issues: security}
 \begin{multicols}{2}
   		\begin{enumerate}
    			\item Managed and maintained \alert{centralized platforms} suffer from the single point of failure
@@ -60,10 +79,10 @@
   \end{multicols}
 \end{frame}
 
-\begin{frame}{Crowdsensing: issues}
+\begin{frame}{Crowdsensing issues: incentive}
 \begin{multicols}{2}
   		\begin{enumerate}
-    		\item Encouraging workers by offering appropiate \alert{incentive mechanisms} (monetary usually) \rightarrow  \underline{auction theory} guarantees benefits for both requesters and workers\cite{paper15} but only provide short-term incentives
+    		\item Encouraging workers by offering appropiate \alert{incentive mechanisms} (monetary usually) \rightarrow   \underline{auction theory} guarantees benefits for both requesters and workers but only provide short-term incentives
     			% \begin{itemize}
    				% 	\item \textbf{Proposal:} hybrid incentive mechanism, adopting \underline{mechanism design theory}, considering three factors:
    				% 	\begin{itemize}

@@ -15,9 +15,44 @@
 
 \section{Security issues: privacy}
 
-\subsection{Single point of failure}
+\subsection{Provenance of data}
+
+\begin{frame}{Provenance of data}
+  \begin{exampleblock}{Model updates}
+  A blockchain-based privacy-preserving federated learning framework leverages the immutability and decentralized trust properties of blockchain to provide the \alert{provenance of model updates} \textbf{(smart contracts)}
+%  \item \textbf{Benefit:} improved data collection efficiency and reduced costs effectively
+  \end{exampleblock}
+  \begin{figure}[h]
+        \centering
+        \includegraphics[width=.7\textwidth]{blockchain-in-supply-chain-industry-6.jpg}
+      \end{figure}
+\end{frame}
+
+\subsection{Data privacy}
+
+\begin{frame}{Data privacy}
+\textbf{Improving data privacy in FL scenario:} 
+\begin{itemize}
+  		\item \alert{Storing evidence:} by using hashing and fingerprint mechanisms, references can be stored proving both local data and models are correct
+  		\item \alert{Limiting access:} by making the ledger network only accessible via private network of participants
+  		\item \alert{Zero Knowledge Proofs:} advanced (and computationally expensive) cryptographical techniques for granular information disclosure (both for mutual verification and partial data disclosure) 
+\end{itemize}
+\end{frame}
 
 \section{Quality management: incentive}
+
+\subsection{Incentive mechanism}
+
+\begin{frame}{Incentive mechanism}
+  \begin{exampleblock}{Federated Learning scenario}
+ An effective incentive mechanism \alert{combining reputation with contract theory} motivates high-reputation mobile devices with high-quality data to participate in model learning
+%  \item \textbf{Benefit:} improved data collection efficiency and reduced costs effectively
+  \end{exampleblock}
+  \begin{figure}[h]
+        \centering
+        \includegraphics[width=.7\textwidth]{incentive-FL.png}
+      \end{figure}
+\end{frame}
 
 %\subsection{1st research question}
 %
@@ -120,9 +155,9 @@
    				\end{itemize}
     		\item \textbf{How to distribute the rewards to the workers?}
   		\end{enumerate}
-  		With the help of \alert{mechanism design theory}\cite{article56} two important properties for the incentive mechanism are guaranteed:
+  		With the help of \alert{mechanism design theory} two important properties for the incentive mechanism are guaranteed:
   		\begin{itemize}
-   					\item \textbf{Incentive quality (IC):} the truthful submission of sensing  cost is the worker's optimal bidding strategy
+   					\item \textbf{Incentive quality (IC):} the truthful submission of training cost is the worker's optimal bidding strategy
    					\item \textbf{Individual rationality (IR):} the reward must compensate for the worker's cost (non-negative)
    		\end{itemize}
 \end{frame}
