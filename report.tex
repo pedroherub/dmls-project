@@ -74,11 +74,12 @@
 
 \vskip 0.3in
 
-%\begin{abstract}
-%This document provides a basic paper template and submission guidelines.
-%Abstracts must be a single paragraph, ideally between 4--6 sentences long.
-%Gross violations will trigger corrections at the camera-ready phase.
-%\end{abstract}
+\begin{abstract}
+% This document provides a basic paper template and submission guidelines.
+% Abstracts must be a single paragraph, ideally between 4--6 sentences long.
+% Gross violations will trigger corrections at the camera-ready phase.
+Federated learning (FL) is a rapidly growing research field in machine learning, it has been a lot during the last years and will keep developping. However, the traditional FL framework still faces some problems that can affect the functioning of the whole system. In this report, we  discuss recent advances and present a collection of works that have been done to solve security issues in FL and improve incentive mechanisms. Besides, we investigate the advantages of combining FL with blockchain technology to create a blockchain-based federated learning system. We will show that blockchain can offer more security to FL and provide a way to reward the workers of the system.
+\end{abstract}
 ]
 
 % this must go after the closing bracket ] following \twocolumn[ ...
@@ -183,14 +184,23 @@ Blockchain also can be used to train machine learning models while preserving pr
 \subsection{Quality management: incentive}
 
 There are many security problems neglected in federated learning, for example, the participants may behave incorrectly in gradient collecting or parameter updating, and the server may be malicious as well. In FL processing, the data quality shared by usersdirectly aﬀects the accuracy of the federated learning model, and how to encourage more data owners to share data is crucial. Inother words, how to design a good incentive mechanism is the key problem in FL. 
-\newline \newline \cite{weng_2019} present a distributed, secure, and fair deep learning framework named \textit{DeepChain} to solve these problems. This technique provides a promising privacy preservation for mobile devices while simultaneously ensuring high learning performance \cite{kang_2019}. \cite{liu_fedcoin_2020} propose FedCoin, a blockchain-based peer-to-peer payment system for FL to enable a feasible SV based profit distribution. \cite{lin_2022} propose a novel Wirelessly Powered Edge intelliGence (WPEG) framework, which aims to achieve a stable, robust, and sustainable edge intelligence by energy harvesting (EH) methods. \cite{wang_2020} propose SFAC, a secure federated learning framework for UAV-assisted MCS. A new ecosystem of ML model trading over a trusted Blockchain-based network is proposed \cite{nguyen_2021}. Problems, however, can arise if there is a lack of quality data for AI-model training, scalability, and maintenance. \cite{chaabene_2022} propose a data-centric federated learning architecture leveraged by a public blockchain and smart contracts to overcome this significant issue. The proposed approach employs privacy-preserving bidirectional long-short term memory (BiLSTM) and augments the security through the integration of Blockchain technology based on Ethereum smart contract environment \cite{rahmadika_2022}. While several works focus on strategic incentive designs and client selection to overcome this problem, there is a major knowledge gap in terms of an overall design tailored to the foreseen digital economy, including Web 3.0, while simultaneously meeting the learning objectives. To address this gap \cite{pandey_2022} propose a contribution-based tokenized incentive scheme, namely \texttt{FedToken}, backed by blockchain technology that ensures fair allocation of tokens amongst the clients that corresponds to the valuation of their data during model training. Other influential work includes \cite{lu_2020}. 
+\newline \newline \cite{weng_2019} present a distributed, secure, and fair deep learning framework named \textit{DeepChain} to solve these problems. This technique provides a promising privacy preservation for mobile devices while simultaneously ensuring high learning performance \cite{kang_2019}. \cite{liu_fedcoin_2020} propose FedCoin, a blockchain-based peer-to-peer payment system for FL to enable a feasible SV based profit distribution. \cite{lin_2022} propose a novel Wirelessly Powered Edge intelliGence (WPEG) framework, which aims to achieve a stable, robust, and sustainable edge intelligence by energy harvesting (EH) methods. \cite{wang_2020} propose SFAC, a secure federated learning framework for UAV-assisted MCS. A new ecosystem of ML model trading over a trusted Blockchain-based network is proposed \cite{nguyen_2021}. Problems, however, can arise if there is a lack of quality data for AI-model training, scalability, and maintenance. \cite{chaabene_2022} propose a data-centric federated learning architecture leveraged by a public blockchain and smart contracts to overcome this significant issue. The proposed approach employs privacy-preserving bidirectional long-short term memory (BiLSTM) and augments the security through the integration of Blockchain technology based on Ethereum smart contract environment \cite{rahmadika_2022}. While several works focus on strategic incentive designs and client selection to overcome this problem, there is a major knowledge gap in terms of an overall design tailored to the foreseen digital economy, including Web 3.0, while simultaneously meeting the learning objectives. To address this gap \cite{pandey_2022} propose a contribution-based tokenized incentive scheme, namely \texttt{FedToken}, backed by blockchain technology that ensures fair allocation of tokens amongst the clients that corresponds to the valuation of their data during model training. 
 \begin{figure}[!ht]
     \centering
     \includegraphics[width=8cm]{assets/incentiveGraph.PNG}
     \caption{FL incentive model}
     \label{fig:incentive_graph}
 \end{figure}
-\newline \newline In his work, \cite{weijie_2022} propose an incentive mechanism based on the enhanced Shapley value method for FL. In this mechanism presented figure \cite{fig:incentive_graph}, the enhanced Shapley value method is proposed to measure income distribution, which takes multiple influence factors as weights. The analytic hierarchy process (AHP) is used to find the corresponding weight value of the influence factors. Finally, the numerical experiments are carried to verify the performance of the proposed incentive mechanism. 
+\newline \newline In his work, \cite{weijie_2022} propose an incentive mechanism based on the enhanced Shapley value method for FL. In this mechanism presented figure \ref{fig:incentive_graph}, the enhanced Shapley value method is proposed to measure income distribution, which takes multiple influence factors as weights. The analytic hierarchy process (AHP) is used to find the corresponding weight value of the influence factors. Finally, the numerical experiments are carried to verify the performance of the proposed incentive mechanism. Other influential work includes \cite{lu_2020}. 
+
+\subsubsection{Multifactor incentives}
+In order to provide a better experience for both the workers and the requester of the model, we should investigatee the possibility to provide a multifactor incentive mechanism. A multifactor incentive is based on three parameters : the workers binding, their reputation and the estimation of the quality of their recent data. From these parameters we can define a Analytic Hierarchy Process (AHP) based on the following points : 
+\newline -Objective level: winning workers\newline -Criteria level: parameters criteria\newline -Alternative level: workers available \newline In order to evaluate this multifactor incentive approach, we use the following formula which apply weights to the different parameters of the AHP:
+\begin{equation}
+    \theta_{i}=\omega_{1} B_{i}+\omega_{2} R_{i}+\omega_{3} Q_{i}  	
+\end{equation}
+Where  \begin{equation} \omega_{i} \geq 0 \end{equation}
+and  \begin{equation} \sum_{\omega_{i}=1}^{3} \omega_{i}=1 \end{equation}
 
 \subsubsection{Impact on incentive models}
 %What is the impact of blockchain on incentive models of federated learning?
@@ -198,7 +208,8 @@ Blockchain can be used to incentivize federated learning. \cite{kumar_2020}, \ci
 %How can blockchain be used to create new incentive models for federated learning?
 Blockchain also can be used to create new incentive models for federated learning. \cite{kumar_2020} found that blockchain technology can be used to create a value-driven incentive mechanism for federated learning. \cite{wang_2022} found that a two-stage Stackelberg game can be used to allocate resources for clients in blockchain-based federated learning. \cite{goncalves_2022} found that a blockchain-based federated learning framework can be used to increment the system security using an incentive mechanism. Together, these papers suggest that blockchain can be used to create new incentive models for federated learning.
 
-
+\section{Conclusion}
+In this report, we have seen the benefits of consortium blockchain technology that begin with, a resistant system to the single point of failure problems of traditional FL. Then, blockchain offers more transparency to the system by trusting the provenance of data and helps also to preserve th privacy of the workeers that contribute to the system with their datas. Finally, the cooperative management of blockchain reduces cost and enhances the flexibility of the system. As presented, the use of hybrid incentive mechanism also provide benefits to FL systems. Indeed, it encourages workers to contribute valuable data and penalizes malicious ones thanks to more accurate rewards. Furthermore, hybrid incentives ensures favorables short-term and long-term incentives for workers which is beneficial to the whole federated learning system.
 %\section{Research problem}
 
 %\section{Related work}
