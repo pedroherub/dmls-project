@@ -204,6 +204,8 @@ Blockchain can also be used to share machine learning models while preserving pr
 
 \subsection{Architecture}
 
+Blockchain-based FL system and its core elements:
+
 \begin{enumerate}
 \item \textit{Federated Learning participants}: participants engage in model training and submit local model changes for verification and aggregation throughout the next phase.
 \item \textit{FL integration with blockchain}: the integration serves as middleware to enable communication between blockchain and FL players.
@@ -223,13 +225,16 @@ The miners agree to create a completely converged global model.
 
 \subsection{Workflow}
 
+Until the global model has reached the proper learning rate or has reached full convergence, these stages (part of one-epoch operation) are repeated.
+
 \begin{enumerate}
-\item \textit{Decentralization}: it has numerous decentralized servers that can store model changes with high resilience to single point of failure attacks.
-\item \textit{Traceability}: all block histories are kept connected in a chain. The authors of model changes cannot be disputed by participants.
-\item \textit{Immutabililty}: the server can detect and prevent record tampering. To make each block permanent and unchangeable, it has a distinct hash value.
-\item \textit{Incentives}: participants are engaged through incentive or reward systems, and as a result, they contribute with high-quality data model updates that lead to an accurate global model.
-\item \textit{Integrity and realiability}: since every block is connected through cryptography, any data changes can be quickly identified. Blockchain demonstrates its inherent reliability and security.
-\item \textit{Trust}: a consensus method is used to build trust between participants. Participants that accept the contract are permitted to take part in training sessions.
+\item \textit{Local model training}: FL clients first train the local model updates using their own local datasets, then upload the model for additional steps like verification and aggregation.
+\item \textit{Smart contract execution}: for engagement among parties in the blockchain network. For instance, when FL participants meet the requirements for the FL model training process, they register through the smart contract. Following the successful registration of FL participants, the miners receive local model upgrades.
+\item \textit{Local model upload}: the local model updates are sent to the blockchain miners for upload. On the basis of the consensus mechanism, the miners authenticate and verify local model modifications.
+\item \textit{Start mining process}: the registered FL participants send local model updates to the linked miners. The local model updates are then aggregated and verified by the miners.
+\item \textit{Run consensus algorithm}: the consensus algorithm is executed by each miner up until it receives a freshly created block from other miners. The network's miners then broadcast the new block.
+\item \textit{Add block into blockchain}: the blockchain network now has a fresh block added to it.
+\item \textit{Download global model}: the global model can be downloaded upon request by devices. Since FL participant devices used their own resources to train the model, they are free to download it. External devices, on the other hand, must pay fees in order to access the global model. The entire community can gain from fully trained models in this way.
 \end{enumerate}
 
 \begin{figure}[!ht]
