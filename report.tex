@@ -24,11 +24,11 @@
 
 % The \mlsystitle you define below is probably too long as a header.
 % Therefore, a short form for the running title is supplied here:
-\mlsystitlerunning{Blockchain and Federated Learning}
+\mlsystitlerunning{Blockchain-based Federated Learning}
 \begin{document}
 
 \twocolumn[
-\mlsystitle{Blockchain and Federated Learning}
+\mlsystitle{Blockchain-based Federated Learning}
 
 % It is OKAY to include author information, even for blind
 % submissions: the style file will automatically remove it for you
@@ -113,6 +113,18 @@ Federated learning (FL) is a distributed learning paradigm that aims to train ma
     \label{fig:TopologyFL}
 \end{figure}
 
+\subsubsection{Attacks to Federated Learning}
+
+\begin{enumerate}
+\item \textit{Single point of failure attack}: the central server can jeopardize the security of the FL system in a number of ways, including (1) server instability that causes a system crash, (2) a compromised central server that produces a fake global model, and (3) maximum resource consumption.
+\item \textit{Denial of service and distributed denial of service attack}: malicious devices can overload the system and cause it to crash by persistently propagating incorrect model changes. Similar to this, if a FL server is compromised, it replicates this process and renders the FL system completely inoperable. Additionally, a malicious FL server may alter the initial global model with a new model that has a negligible difference in accuracy by injecting weak noise. 
+\item \textit{Free-riding attack}: due to the high cost, dishonest participants will take advantage of incentives while not updating the local model. For instance, free-riders can immediately upload the untrained model and transmit noise-free false or comparable model updates. Therefore, this circumstance in FL systems may cause problems with fairness and reliability.
+\item \textit{Poisoning attacks}: data poisoning and model poisoning are the two subtypes of poisoning episodes. The data poisoning attack is launched and the fraudulent model updates are spread by altering the training data for the model. Additionally, hostile participants have the ability to change dataset labels and apply predefined poisoned model updates, both of which hurt the performance of the global FL model.
+Also, the model is updated by randomly produced gradients in random and reverse poisoning attacks, while the training model is updated in the opposite direction \cite{chen_2018} and \cite{li_bft_2021}.
+\item \textit{Main-in-the-middle attack}: occurs between the FL server and FL client's communication. To send fake model updates and manage the traffic, the attacker impersonates a FL server or client. Session hijacking and IP spoofing are the most typical forms. 
+\item \textit{Eavesdropping attacks}: causes for FL participants' private information to leak. Similar to the broadcasted paradigm between the FL server and players, an adversary can alter, corrupt, remove, or intercept it. Specailly, the jammer attack against FL systems poses a greater risk because it has the potential to maliciously obstruct network connection on the server or client end through collisions or interference.
+\end{enumerate}
+
 \subsection{Blockchain}
 Blockchain, is an emerging technology that come with several attractive properties : decentralization, anonymity, and traceability. These properties has already shown their utilities in different fields. More recently, blockchain begin to be used to address the challenges faced by the acual FL. First, decentralization can be achieved by the deployment of blockchain in FL by replacing the central aggregator by the peer-to-peer blockchain system. On the other hand,  the job of aggregating the global model can be handled by blockchain nodes to avoid the unreliability of the whole FL system usually caused by the centralized server's failure.. Figure \ref{fig:TopologyBC} indicates the topology of block hain. Moreover, blockchain gives verification mechanisms to FL in the name of transaction verification. These mechanisms allows FL model to remove the unqualified or even malicious local model updates before the global model update. Furthermore, blockchain can sucessffully distribute rewards to FL clients to reward their participation and honest behaviors.
 \begin{figure}[!ht]
@@ -140,13 +152,17 @@ Crowdsourcing involves obtaining work, information, or opinions from a large gro
 
 In the present time, the use of Machine learning (ML) is constantly increasing in every field. Thus, lots of data are generated and gathered from massive end users to train ML models which bring benefits in terms improve the serices offered to people. Therefore, ML framework usually requires end devices to transfer the collected data to the central server for training. But, this process causes two challenges : A large amount of communication resources is requirred to transfer data. Then, the submission of raw data increases the risk of privacy leakage, which making data owners unwilling to upload data to the central server by fear of security. FL paired with blockchain appeared to be a good solution to solve this problem as well as the actual limits of FL mentionned earlier (single point of failure, false data and the lalck of incentives).
 
-\subsection{Security issues}
+\subsection{Security and privacy issues}
 
 In classical FL, the central FL server receives the trained local model updates, which are then combined to improve the overall FL model. Therefore, the entire model is dependent on the central FL server due to the model parameters aggregation scheme used in FL. Single Point of Failure (SPoF) and Distributed Denial of Service (DDoS) attacks result from the failure of a central server. Additionally, there is no visible means to record local model updates in the existing FL system.
 
 \subsection{Crowdsourcing issues}
 
 The development of crowdsourcing systems is often limited by the security weaknesses of the centralized nature of the systems, and there have been many research efforts to solve them. Encryption and differential privacy are used to protect the data privacy of all participants who involved in the communication process. Reputation-based mechanisms are proposed to address “false-reporting” and “free-riding” behavior.
+
+%\subsection{Verification and accountability issues}
+%
+
 
 \section{Blockchain-based Federated Learning}
 
@@ -213,6 +229,10 @@ and  \begin{equation} \sum_{\omega_{i}=1}^{3} \omega_{i}=1 \end{equation}
 Blockchain can be used to incentivize federated learning. \cite{kumar_2020}, \cite{pandey_2022}, \cite{wang_2022} and \cite{martinez_record_2019} all found that blockchain can be used to create a value-driven incentive mechanism, a contribution-based tokenized incentive scheme, an incentive mechanism to allocate resources, and establish data security and accurately pay participants, respectively. This incentivizes clients to participate in federated learning, which improves the efficiency of the training. Consequently, blockchain does have an impact on incentive models of federated learning.\newline
 %How can blockchain be used to create new incentive models for federated learning?
 Blockchain also can be used to create new incentive models for federated learning. \cite{kumar_2020} found that blockchain technology can be used to create a value-driven incentive mechanism for federated learning. \cite{wang_2022} found that a two-stage Stackelberg game can be used to allocate resources for clients in blockchain-based federated learning. \cite{goncalves_2022} found that a blockchain-based federated learning framework can be used to increment the system security using an incentive mechanism. Together, these papers suggest that blockchain can be used to create new incentive models for federated learning.
+
+%\subsection{Quality management: incentive}
+
+
 
 \section{Conclusion}
 In this report, we have seen the benefits of consortium blockchain technology that begin with, a resistant system to the single point of failure problems of traditional FL. Then, blockchain offers more transparency to the system by trusting the provenance of data and helps also to preserve th privacy of the workeers that contribute to the system with their datas. Finally, the cooperative management of blockchain reduces cost and enhances the flexibility of the system. As presented, the use of hybrid incentive mechanism also provide benefits to FL systems. Indeed, it encourages workers to contribute valuable data and penalizes malicious ones thanks to more accurate rewards. Furthermore, hybrid incentives ensures favorables short-term and long-term incentives for workers which is beneficial to the whole federated learning system.
