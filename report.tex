@@ -140,8 +140,14 @@ Crowdsourcing involves obtaining work, information, or opinions from a large gro
 
 In the present time, the use of Machine learning (ML) is constantly increasing in every field. Thus, lots of data are generated and gathered from massive end users to train ML models which bring benefits in terms improve the serices offered to people. Therefore, ML framework usually requires end devices to transfer the collected data to the central server for training. But, this process causes two challenges : A large amount of communication resources is requirred to transfer data. Then, the submission of raw data increases the risk of privacy leakage, which making data owners unwilling to upload data to the central server by fear of security. FL paired with blockchain appeared to be a good solution to solve this problem as well as the actual limits of FL mentionned earlier (single point of failure, false data and the lalck of incentives).
 
+\subsection{Security issues}
+
+In classical FL, the central FL server receives the trained local model updates, which are then combined to improve the overall FL model. Therefore, the entire model is dependent on the central FL server due to the model parameters aggregation scheme used in FL. Single Point of Failure (SPoF) and Distributed Denial of Service (DDoS) attacks result from the failure of a central server. Additionally, there is no visible means to record local model updates in the existing FL system.
+
 \subsection{Crowdsourcing issues}
+
 The development of crowdsourcing systems is often limited by the security weaknesses of the centralized nature of the systems, and there have been many research efforts to solve them. Encryption and differential privacy are used to protect the data privacy of all participants who involved in the communication process. Reputation-based mechanisms are proposed to address “false-reporting” and “free-riding” behavior.
+
 \section{Blockchain-based Federated Learning}
 
 Although Federated Learning allows for participants to contribute their local data without it being revealed, it faces issues in data security and in accurately paying participants for quality data contributions. Many researches have already been published in this fiels : 
@@ -179,7 +185,7 @@ There are many security problems neglected in federated learning, Indeed, FL all
 %What is the impact of blockchain on the security of machine learning models?
 Blockchain can be used to improve the security of machine learning models. \cite{chen_2020} found that the blockchain technique can be used to design a decentralized privacy-preserving and secure machine learning system. \cite{fadaeddini_2019} found that the proposed framework uses the Stellar Blockchain infrastructure for secure decentralized training of the deep models. \cite{goel_2019} found that the proposed approach provides security to both deep learning model and the biometric template. \cite{wang_ai_2020} found that the proposed system obtains comparable performance with that of conventional distributed systems, and bounded performance in the case of Byzantine attacks. Therefore, blockchain appears to be a promising solution for improving the security of machine learning models.\newline
 %What is the impact of blockchain on the privacy of machine learning models?
-Blockchain also can be used to train machine learning models while preserving privacy. \cite{ladia_2019}, \cite{kim_2019}, \cite{chen_2018}, and \cite{weng_2019} all propose different ways to do this. These papers suggest that blockchain is a promising solution for training machine learning models while preserving privacy.
+Blockchain also can be used to train machine learning models while preserving privacy. \cite{ladia_2019}, \cite{chen_2018}, and \cite{weng_2019} all propose different ways to do this. These papers suggest that blockchain is a promising solution for training machine learning models while preserving privacy.
 
 \subsection{Quality management: incentive}
 
