@@ -202,6 +202,43 @@ Blockchain can also be used to share machine learning models while preserving pr
 \item \textit{Trust}: a consensus method is used to build trust between participants. Participants that accept the contract are permitted to take part in training sessions.
 \end{enumerate}
 
+\subsection{Architecture}
+
+\begin{enumerate}
+\item \textit{Federated Learning participants}: participants engage in model training and submit local model changes for verification and aggregation throughout the next phase.
+\item \textit{FL integration with blockchain}: the integration serves as middleware to enable communication between blockchain and FL players.
+\item \textit{Miners working}: the FL participants communicate local model updates to the miners. Each FL participant and data holder has a direct line of communication with the miner, ensuring ongoing collaboration.
+\item \textit{Smart contract}: employed by researchers \citep{khan_2021} for a variety of purposes, including participant registration, model training coordination, local model update aggregation, participant evaluation, and reward administration.
+\item \textit{Consensus algorithm}: he formation, verification, and acceptance of a new block on a blockchain network are all governed by a shared agreement reached by all stakeholders.
+The miners agree to create a completely converged global model.
+\item \textit{Blockchain network}: The blockchain network is expanded with verified new blocks. Until the required learning rate is reached, the FL model process continues.
+\end{enumerate}
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=8cm]{assets/blockchain-FL-architecture.png}
+    \caption{Blockchain-based federated learning architecture}
+    \label{ Structure FL}
+\end{figure}
+
+\subsection{Workflow}
+
+\begin{enumerate}
+\item \textit{Decentralization}: it has numerous decentralized servers that can store model changes with high resilience to single point of failure attacks.
+\item \textit{Traceability}: all block histories are kept connected in a chain. The authors of model changes cannot be disputed by participants.
+\item \textit{Immutabililty}: the server can detect and prevent record tampering. To make each block permanent and unchangeable, it has a distinct hash value.
+\item \textit{Incentives}: participants are engaged through incentive or reward systems, and as a result, they contribute with high-quality data model updates that lead to an accurate global model.
+\item \textit{Integrity and realiability}: since every block is connected through cryptography, any data changes can be quickly identified. Blockchain demonstrates its inherent reliability and security.
+\item \textit{Trust}: a consensus method is used to build trust between participants. Participants that accept the contract are permitted to take part in training sessions.
+\end{enumerate}
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=8cm]{assets/blockchain-FL-workflow.png}
+    \caption{Blockchain-based federated learning system's single-epoch workflow}
+    \label{ Structure FL}
+\end{figure}
+
 \section{Research lines}
 
 \subsection{Security issues: privacy}
